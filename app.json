@@ -1,5 +1,13 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/fonts/Roboto/Roboto-Black.ttf"]
+        }
+      ]
+    ],
     "name": "ProjectX",
     "slug": "ProjectX",
     "version": "1.0.0",
