@@ -17,6 +17,11 @@ module.exports = {
       fontSize: {
         xxs: "8px",
       },
+      fontFamily: {
+        "roboto-regular": ["Roboto_400Regular"],
+        "roboto-medium": [" Roboto_500Medium"],
+        "roboto-bold": ["Roboto_700Bold"],
+      },
     },
   },
   plugins: [],

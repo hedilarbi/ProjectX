@@ -1,29 +1,22 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { useFonts } from "expo-font";
-import { StatusBar } from "expo-status-bar";
-import { Tracker } from "./src/Componants/test"; // Import the Tracker component
+import RootNavigation from "./src/navigations/RootNavigation";
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_500Medium,
+  Roboto_700Bold,
+} from "@expo-google-fonts/roboto";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    "Roboto-Black": require("./assets/fonts/Roboto/Roboto-Black.ttf"),
+    Roboto_400Regular,
+    Roboto_500Medium,
+    Roboto_700Bold,
   });
 
   if (!fontsLoaded) {
-    // You can return a loading indicator here if needed
     return null;
   }
 
-  return (
-    <View style={styles.container}>
-      <Tracker />
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <RootNavigation />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
