@@ -6,6 +6,11 @@
         {
           "fonts": ["./assets/fonts/Roboto/Roboto-Black.ttf"]
         }
+      ], [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+        }
       ]
     ],
     "name": "ProjectX",
@@ -31,6 +36,7 @@
         "backgroundColor": "#ffffff"
       }
     },
+    
     "web": {
       "favicon": "./assets/favicon.png"
     }

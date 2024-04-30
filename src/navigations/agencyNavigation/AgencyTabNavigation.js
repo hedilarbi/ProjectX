@@ -13,16 +13,16 @@ const AgencyTabNavigation = () => {
           switch (route.name) {
             case "Home":
               iconName = focused ? (
-                <Ionicons name="home" size={24} color="black" />
+                <Ionicons name="home" size={24} color="#22c55e" />
               ) : (
-                <Ionicons name="home-outline" size={24} color="black" />
+                <Ionicons name="home-outline" size={24} color="#827B7B" />
               );
               break;
           }
 
           return iconName;
         },
-        tabBarActiveTintColor: "#F7A600",
+        tabBarActiveTintColor: "#22c55e",
         tabBarInactiveTintColor: "#827B7B",
         tabBarLabelStyle: {
           fontFamily: "Roboto_700Bold",
@@ -32,7 +32,7 @@ const AgencyTabNavigation = () => {
       <MainTab.Screen
         name="Home"
         component={AgencyHomeNavigation}
-        options={{ headerShown: false }}
+        options={{ headerShown: false, title: "Acceuil" }}
       />
     </MainTab.Navigator>
   );
