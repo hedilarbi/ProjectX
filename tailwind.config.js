@@ -8,19 +8,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        pr: "#F7A600",
+        pr: "#85C872",
+        sc: "#285A84",
         bg: "#EBEBEB",
         tgry: "#857878",
         gry: "#FBFBFB",
         lgry: "#F6F6F6",
+        dgry: "#555555",
+        "warning-red": "#E21C4A",
       },
       fontSize: {
         xxs: "8px",
       },
       fontFamily: {
-        "roboto-regular": ["Roboto_400Regular"],
-        "roboto-medium": [" Roboto_500Medium"],
-        "roboto-bold": ["Roboto_700Bold"],
+        "nunito-regular": ["Nunito_400Regular"],
+        "nunito-medium": ["Nunito_500Medium"],
+        "nunito-bold": ["Nunito_700Bold"],
       },
     },
   },

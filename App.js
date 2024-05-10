@@ -2,16 +2,16 @@ import React from "react";
 import RootNavigation from "./src/navigations/RootNavigation";
 import {
   useFonts,
-  Roboto_400Regular,
-  Roboto_500Medium,
-  Roboto_700Bold,
-} from "@expo-google-fonts/roboto";
+  Nunito_400Regular,
+  Nunito_500Medium,
+  Nunito_700Bold,
+} from "@expo-google-fonts/nunito";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    Roboto_400Regular,
-    Roboto_500Medium,
-    Roboto_700Bold,
+    Nunito_400Regular,
+    Nunito_500Medium,
+    Nunito_700Bold,
   });
 
   if (!fontsLoaded) {

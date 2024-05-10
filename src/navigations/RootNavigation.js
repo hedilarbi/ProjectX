@@ -1,15 +1,23 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import AgencyTabNavigation from "./agencyNavigation/AgencyTabNavigation";
+import AuthNavigation from "./authNavigation/AuthNavigation";
+import UserTabNavigation from "./userNavigation/UserTabNavigation";
 
 const RootNavigation = () => {
   const RootStack = createNativeStackNavigator();
   return (
     <NavigationContainer>
       <RootStack.Navigator>
-        <RootStack.Screen
+        {/* <RootStack.Screen
           name="Auth"
-          component={AgencyTabNavigation}
+          component={AuthNavigation}
+          options={{
+            headerShown: false,
+          }}
+        /> */}
+        <RootStack.Screen
+          name="UserTab"
+          component={UserTabNavigation}
           options={{
             headerShown: false,
           }}
