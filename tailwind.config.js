@@ -13,8 +13,8 @@ module.exports = {
         bg: "#EBEBEB",
         tgry: "#857878",
         gry: "#FBFBFB",
-        lgry: "#F6F6F6",
-        dgry: "#555555",
+        lgry: "#555555",
+        dgry: "#333333",
         "warning-red": "#E21C4A",
       },
       fontSize: {
