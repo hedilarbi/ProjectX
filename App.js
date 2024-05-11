@@ -6,6 +6,8 @@ import {
   Nunito_500Medium,
   Nunito_700Bold,
 } from "@expo-google-fonts/nunito";
+import { Provider } from "react-redux";
+import { store } from "./src/redux/store";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,5 +20,9 @@ export default function App() {
     return null;
   }
 
-  return <RootNavigation />;
+  return (
+    <Provider store={store}>
+      <RootNavigation />
+    </Provider>
+  );
 }
