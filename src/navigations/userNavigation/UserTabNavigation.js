@@ -39,13 +39,13 @@ const UserTabNavigation = () => {
                 iconName = focused ? (
                   <FontAwesome5
                     name="map-marked-alt"
-                    size={28}
+                    size={26}
                     color={Colors.PR}
                   />
                 ) : (
                   <FontAwesome5
                     name="map-marked-alt"
-                    size={28}
+                    size={26}
                     color={Colors.DGRY}
                   />
                 );
@@ -53,9 +53,9 @@ const UserTabNavigation = () => {
 
               case "ProfileNav":
                 iconName = focused ? (
-                  <FontAwesome5 name="user-alt" size={28} color={Colors.PR} />
+                  <FontAwesome5 name="user-alt" size={26} color={Colors.PR} />
                 ) : (
-                  <FontAwesome5 name="user-alt" size={28} color={Colors.DGRY} />
+                  <FontAwesome5 name="user-alt" size={26} color={Colors.DGRY} />
                 );
                 break;
             }

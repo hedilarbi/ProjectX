@@ -4,7 +4,7 @@ import React from "react";
 const SuggestionsListItem = ({ item }) => {
   return (
     <View
-      className="bg-slate-200 h-36 w-48 mr-6 rounded-md"
+      className="bg-slate-200 h-36 w-56 mr-6 rounded-md"
       style={{
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 4 },
