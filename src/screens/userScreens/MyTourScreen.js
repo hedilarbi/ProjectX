@@ -28,7 +28,7 @@ const MyTourScreen = () => {
   });
   const [loading, setLoading] = useState(true);
   const [buttonClicked, setButtonClicked] = useState(false);
-  const [MarkerClicked, setMarkerClicked] = useState(false); // State for button click
+  const [MarkerClicked, setMarkerClicked] = useState(false);
   const [selectedMarker, setSelectedMarker] = useState(null);
 
   const mapRef = useRef();
