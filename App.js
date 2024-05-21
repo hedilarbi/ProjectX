@@ -1,5 +1,6 @@
 import React from "react";
 import RootNavigation from "./src/navigations/RootNavigation";
+import AuthNavigation from "./src/navigations/authNavigation/AuthNavigation";
 import {
   useFonts,
   Nunito_400Regular,

@@ -19,6 +19,8 @@ module.exports = {
       },
       fontSize: {
         xxs: "8px",
+        large: "20px",
+        xlarge: "24px",
       },
       fontFamily: {
         "nunito-regular": ["Nunito_400Regular"],
