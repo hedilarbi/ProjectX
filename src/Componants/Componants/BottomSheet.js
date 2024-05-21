@@ -88,11 +88,11 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   line: {
-    width: 75,
-    height: 4,
-    backgroundColor: "grey",
+    width: 101,
+    height: 8,
+    backgroundColor: "#333333",
     alignSelf: "center",
-    marginVertical: 15,
+    marginVertical: 10,
     borderRadius: 2,
   },
 });

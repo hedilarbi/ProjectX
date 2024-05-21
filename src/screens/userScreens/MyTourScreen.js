@@ -83,7 +83,7 @@ const MyTourScreen = () => {
     <View style={styles.bottomSheetContent}>
       <Image
         source={selectedMarker.imageUrl}
-        style={{ width: "100%", height: 200 }}
+        style={{ width: 390, height: 151 }}
         resizeMode="cover"
       />
 
