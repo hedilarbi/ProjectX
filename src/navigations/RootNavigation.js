@@ -11,13 +11,6 @@ const RootNavigation = () => {
   return (
     <NavigationContainer>
       <RootStack.Navigator>
-        {/* <RootStack.Screen
-          name="Auth"
-          component={AuthNavigation}
-          options={{
-            headerShown: false,
-          }}
-        /> */}
         <RootStack.Screen
           name="UserTab"
           component={UserTabNavigation}

@@ -1,101 +1,75 @@
-import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import MapView, { Marker } from "react-native-maps";
-import MapViewDirections from "react-native-maps-directions";
-const GOOGLE_API_KEY = "AIzaSyC2t8GvZFa6Ld6fbKM6_m2n3M0JoOmI03w";
-const LATITUDE_DELTA = 0.009;
-const LONGITUDE_DELTA = 0.009;
+import React, { useState, useEffect } from "react";
+import { StyleSheet, View, Dimensions } from "react-native";
+import MapView, { Polyline } from "react-native-maps";
 
-export class Tracker extends Component {
-  constructor(props) {
-    super(props);
+const Test = () => {
+  const [coords, setCoords] = useState([]);
 
-    this.state = {
-      latitude: 37.78825, // Initial latitude
-      longitude: -122.4324, // Initial longitude
-      destinationLatitude: 37.78547, // Destination latitude
-      destinationLongitude: -122.4324, // Destination longitude
-    };
-  }
+  useEffect(() => {
+    // Find your origin and destination point coordinates and pass them to our method.
+    // I am using Bursa,TR -> Istanbul,TR for this example
+    getDirections("40.1884979, 29.061018", "41.0082,28.9784");
+  }, []); // Empty dependency array to run only once on mount
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <MapView
-          style={styles.map}
-          initialRegion={{
-            latitude: this.state.latitude,
-            longitude: this.state.longitude,
-            latitudeDelta: LATITUDE_DELTA,
-            longitudeDelta: LONGITUDE_DELTA,
-          }}
-        >
-          <Marker
-            coordinate={{
-              latitude: this.state.latitude,
-              longitude: this.state.longitude,
-            }}
-            title="Current Location"
-          />
-          <Marker
-            coordinate={{
-              latitude: this.state.destinationLatitude,
-              longitude: this.state.destinationLongitude,
-            }}
-            title="Destination"
-          />
-          <MapViewDirections
-            origin={{
-              latitude: this.state.latitude,
-              longitude: this.state.longitude,
-            }}
-            destination={{
-              latitude: this.state.destinationLatitude,
-              longitude: this.state.destinationLongitude,
-            }}
-            apikey={GOOGLE_API_KEY}
-            strokeWidth={3}
-            strokeColor="hotpink"
-          />
-        </MapView>
-      </View>
-    );
-  }
-}
+  const getDirections = async (startLoc, destinationLoc) => {
+    try {
+      let resp = await fetch(
+        `https://maps.googleapis.com/maps/api/directions/json?origin=${startLoc}&destination=${destinationLoc}`
+      );
+      let respJson = await resp.json();
+      let points = Polyline.decode(respJson.routes[0].overview_polyline.points);
+      let newCoords = points.map((point, index) => ({
+        latitude: point[0],
+        longitude: point[1],
+      }));
+      setCoords(newCoords);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <MapView
+        style={styles.map}
+        initialRegion={{
+          latitude: 41.0082,
+          longitude: 28.9784,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+      >
+        <MapView.Polyline
+          coordinates={coords}
+          strokeWidth={2}
+          strokeColor="red"
+        />
+      </MapView>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
-    ...StyleSheet.absoluteFillObject,
-    justifyContent: "flex-end",
+    flex: 1,
     alignItems: "center",
+    justifyContent: "center",
   },
   map: {
     ...StyleSheet.absoluteFillObject,
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
   },
 });
 
+export default Test;
+
 /*import React from "react";
-import { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import MapView, { Marker, Polyline } from "react-native-maps";
-import haversine from "haversine";
-import * as Location from "expo-location";
 
-const LATITUDE_DELTA = 0.009;
-const LONGITUDE_DELTA = 0.009;
-const LATITUDE = 37.78825;
-const LONGITUDE = -122.4324;
 
-export class Tracker extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      latitude: LATITUDE,
-      longitude: LONGITUDE,
-      routeCoordinates: [],
-      distanceTravelled: 0,
-      prevLatLng: {},
+
+prevLatLng: {},
     };
   }
 
