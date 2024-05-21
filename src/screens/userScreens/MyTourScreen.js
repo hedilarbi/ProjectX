@@ -117,7 +117,7 @@ const MyTourScreen = () => {
       </View>
     );
   }
-  const tour = tours[0]; // Display the first tour for demonstration purposes
+  const tour = tours[0];
   const initialRegion = {
     latitude: userLocation ? userLocation.latitude : tour.lieux[0].latitude,
     longitude: userLocation ? userLocation.longitude : tour.lieux[0].longitude,
